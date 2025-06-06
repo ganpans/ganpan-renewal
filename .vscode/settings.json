@@ -1,0 +1,117 @@
+// .vscode/settings.json - 충돌 방지 완전한 설정
+{
+  // === 기본 에디터 설정 (강제 덮어쓰기) ===
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": false,
+  "editor.formatOnType": false,
+  "editor.insertSpaces": true,
+  "editor.tabSize": 2,
+  "editor.detectIndentation": false,
+
+  // === 전역 기본 포맷터 명시적 지정 ===
+  "editor.defaultFormatter": null, // 기존 설정 무효화
+
+  // === 파일별 포맷터 명시적 강제 지정 ===
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+
+  // === ESLint 설정 (강제 활성화) ===
+  "eslint.enable": true,
+  "eslint.format.enable": false, // Prettier가 포맷 담당
+  "eslint.lintTask.enable": true,
+  "eslint.run": "onSave",
+  "eslint.workingDirectories": ["."],
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+
+  // === 저장 시 액션 (명시적 지정) ===
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "never", // 다른 익스텐션 차단
+    "source.fixAll.eslint": "explicit", // ESLint만 허용
+    "source.organizeImports": "explicit",
+    "source.removeUnusedImports": "explicit"
+  },
+
+  // === Prettier 설정 (강제) ===
+  "prettier.enable": true,
+  "prettier.requireConfig": false, // .prettierrc 없어도 동작
+  "prettier.useEditorConfig": false, // .editorconfig 무시
+  "prettier.configPath": ".prettierrc", // 명시적 경로 지정
+
+  // === 다른 포맷터 비활성화 ===
+  "typescript.format.enable": false, // TS 기본 포맷터 끄기
+  "javascript.format.enable": false, // JS 기본 포맷터 끄기
+  "html.format.enable": false, // HTML 기본 포맷터 끄기
+  "css.format.enable": false, // CSS 기본 포맷터 끄기
+
+  // === 확장 프로그램 충돌 방지 ===
+  "beautify.ignore": [
+    // Beautify 확장과 충돌 방지
+    "js",
+    "jsx",
+    "ts",
+    "tsx",
+    "json",
+    "css",
+    "scss",
+    "html"
+  ],
+
+  // === 기타 유용한 설정 ===
+  "files.autoSave": "onFocusChange",
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+
+  // === TypeScript 설정 ===
+  "typescript.preferences.importModuleSpecifier": "relative",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+
+  // === Emmet 설정 ===
+  "emmet.includeLanguages": {
+    "typescript": "html",
+    "typescriptreact": "html"
+  }
+}
