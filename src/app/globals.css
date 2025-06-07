@@ -32,3 +32,18 @@ body {
     overflow-wrap: break-word;
   }
 }
+
+/* 자간 CSS 변수 정의 */
+:root {
+  --letter-spacing-kr: -0.08em; /* 한국어 -8% */
+  --letter-spacing-en: -0.04em; /* 영어 -4% */
+}
+
+/* 커스텀 자간 클래스 */
+.tracking-kr {
+  letter-spacing: var(--letter-spacing-kr);
+}
+
+.tracking-en {
+  letter-spacing: var(--letter-spacing-en);
+}
