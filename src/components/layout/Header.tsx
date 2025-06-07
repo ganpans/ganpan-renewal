@@ -8,7 +8,7 @@ const Header = ({ step }) => {
         <Ganpan width={225} height={62} />
         <Toggle />
       </div>
-      <Progress step={step} />
+      <Progress step={Number(step)} />
     </div>
   );
 };
