@@ -7,12 +7,7 @@ module.exports = {
   ],
   theme: {
     fontFamily: {
-      // 한국어 폰트
-      'sans-kr': ['Pretendard', 'sans-serif'],
-      // 영어 폰트
-      'sans-en': ['Pretendard', 'sans-serif'],
-      // 기본 폰트 (한국어 우선)
-      sans: ['Pretendard', 'sans-serif'],
+      pretendard: ['Pretendard', 'sans-serif'],
     },
     extend: {
       colors: {
