@@ -99,14 +99,50 @@ pnpm test:watch
 
 ```
 src/
-├── app/           # Next.js App Router 페이지
-├── components/    # 재사용 가능한 React 컴포넌트
-├── constants/     # 상수 정의
-├── hooks/         # 커스텀 React 훅
-├── lib/           # 외부 라이브러리 설정
-├── types/         # TypeScript 타입 정의
-└── utils/         # 유틸리티 함수
+├── app/                    # Next.js App Router 페이지
+│   ├── main/              # 🏠 주요 메인 페이지들
+│   ├── progress/          # 📊 단계별 진행 페이지들
+│   │   └── [id]/         # 동적 라우팅 (단계별 ID)
+│   ├── layout.tsx        # 루트 레이아웃
+│   ├── page.tsx          # 홈페이지
+│   └── globals.css       # 전역 스타일
+├── components/            # 재사용 가능한 React 컴포넌트
+│   ├── ui/               # 🎨 기본 UI 컴포넌트들
+│   │   ├── Toggle.tsx    # 토글 컴포넌트 (재사용 권장)
+│   │   ├── Typography.tsx # 타이포그래피 컴포넌트 (재사용 권장)
+│   │   ├── Progress.tsx  # 프로그레스 바 컴포넌트
+│   │   └── index.ts      # UI 컴포넌트 export
+│   ├── layout/           # 레이아웃 관련 컴포넌트
+│   │   ├── Header.tsx    # 헤더 컴포넌트
+│   │   └── index.ts      # 레이아웃 컴포넌트 export
+│   └── feature/          # 기능별 특화 컴포넌트
+├── constants/            # 상수 정의
+├── hooks/                # 커스텀 React 훅
+├── lib/                  # 외부 라이브러리 설정
+├── types/                # TypeScript 타입 정의
+└── utils/                # 유틸리티 함수
 ```
+
+### 🏗️ 구조 설명
+
+#### 📱 Pages (`app/`)
+
+- **`main/`**: 애플리케이션의 **주요 메인 페이지들**이 위치합니다
+- **`progress/[id]/`**: **단계별 진행 페이지들**로, 동적 라우팅을 통해 각 단계를 관리합니다
+
+#### 🎨 UI Components (`components/ui/`)
+
+다음 컴포넌트들은 **재사용을 적극 권장**합니다:
+
+- **`Toggle.tsx`**: 일관된 토글 UI를 위해 사용
+- **`Typography.tsx`**: 통일된 텍스트 스타일링을 위해 사용
+- **`Progress.tsx`**: 진행률 표시가 필요한 모든 곳에서 사용
+
+#### 🔧 개발 가이드라인
+
+- UI 컴포넌트는 `components/ui/`에서 import하여 사용
+- 새로운 기능별 컴포넌트는 `components/feature/`에 추가
+- 레이아웃 관련 컴포넌트는 `components/layout/`에 구성
 
 ## 🎯 개발 가이드라인
 
